@@ -1,51 +1,51 @@
-# Домашнее задание к занятию «Нереляционные (NoSQL) базы данных»
+# Homework assignment for the class “Non-relational (NoSQL) databases”
 
-### Благодаря этому заданию вы:
-- Научитесь работать с нереляционными базами данных, использовать Spring Data для взаимодействия с NoSQL хранилищами и освоите особенности работы с данными в таких системах.
-- Сможете разрабатывать приложения, использующие различные типы баз данных, включая NoSQL решения, интегрировать их в проекты на базе Spring Framework.
-- Отработаете навыки проектирования моделей данных для NoSQL систем, настройки доступа к базам данных через Spring Data, а также оптимизации запросов к данным.
-- Получите опыт работы с MongoDB – одной из самых популярных NoSQL баз данных, которая широко используется в современных веб-приложениях.
+### With this assignment, you will:
+- Learn how to work with non-relational databases, use Spring Data to interact with NoSQL stores, and master the specifics of working with data in such systems.
+- Be able to develop applications that use various types of databases, including NoSQL solutions, and integrate them into Spring Framework-based projects.
+- Practice your skills in designing data models for NoSQL systems, configuring database access through Spring Data, and optimizing data queries.
+- Gain experience working with MongoDB, one of the most popular NoSQL databases, which is widely used in modern web applications.
 
-Нереляционные базы данных становятся всё более популярными благодаря своей гибкости, высокой производительности при работе с большими массивами данных и возможности горизонтального масштабирования. В условиях роста объёмов информации и необходимости быстрой обработки данных, умение работать с такими системами становится критически важным для разработчиков.
+Non-relational databases are becoming increasingly popular due to their flexibility, high performance when working with large data sets, and horizontal scalability. With the growth of information volumes and the need for fast data processing, the ability to work with such systems is becoming critically important for developers.
 
-### Перед началом выполнения задания убедитесь, что у вас:
-- Установлена среда разработки Java - IntelliJ IDEA.
-- Установлена JDK версии 11+.
-- Установлен и настроен Maven или Gradle для сборки проекта.
-- Установлен MongoDB локально, или есть доступ к удалённому серверу MongoDB.
+### Before starting the task, make sure you have:
+- Java development environment - IntelliJ IDEA installed.
+- JDK version 11+ installed.
+- Maven or Gradle is installed and configured for project build.
+- MongoDB is installed locally, or you have access to a remote MongoDB server.
 
-### Для успешного выполнения этого задания вам понадобятся:
-- Среда разработки Java - IntelliJ IDEA.
-- Сборщик проектов (Maven или Gradle).
-- Локальный экземпляр MongoDB или доступ к облачному экземпляру.
-- Интернет-соединение для скачивания зависимостей и документации.
+### To successfully complete this task, you will need:
+- Java development environment - IntelliJ IDEA.
+- Project builder (Maven or Gradle).
+- Local instance of MongoDB or access to a cloud instance.
+- Internet connection to download dependencies and documentation.
 
-### Задание:
-Вам предстоит создать простое приложение на основе Spring Boot, которое будет взаимодействовать с базой данных MongoDB. Приложение должно выполнять CRUD операции над коллекцией документов, представляющих собой сущности пользователей. Для этого потребуется настроить подключение к MongoDB, создать модели данных, реализовать репозиторий для работы с базой данных и написать контроллер для обработки HTTP-запросов.
+### Task:
+You will create a simple Spring Boot-based application that will interact with a MongoDB database. The application should perform CRUD operations on a collection of documents representing user entities. To do this, you will need to configure the connection to MongoDB, create data models, implement a repository for working with the database, and write a controller for processing HTTP requests.
 
-### Инструкция по выполнению задания:
-1. Создание нового проекта Spring Boot
-- Создайте новый проект Spring Boot с использованием Maven или Gradle.
-- Добавьте зависимости spring-boot-starter-web, spring-boot-starter-data-mongodb и другие необходимые библиотеки.
-2. Настройка подключения к MongoDB
-- Запустить MongoDB в докере с помощтю команды: ```docker run --name my-mongodb -d -p 27017:27017 mongo```
-- Настройте подключение к вашей базе данных MongoDB в файле application.properties.
-- Проверьте корректность настроек, запустив приложение и убедившись, что оно успешно подключается к базе данных.
-3. Создание модели данных
-- Определите сущность User, которая будет храниться в коллекции MongoDB. Эта сущность должна содержать поля id, name, email и age.
-- Используйте аннотации MongoDB (@Document, @Id) для правильной разметки модели.
-4. Реализация репозитория
-- Создайте интерфейс, который расширяет MongoRepository<User, String> для реализации стандартных операций CRUD.
-- Реализуйте дополнительные методы для поиска пользователей по имени или возрасту.
-5. Написание контроллера
-- Напишите REST-контроллер, который обрабатывает запросы GET, POST, PUT и DELETE для работы с пользователями.
-- Обеспечьте валидацию входных данных и обработку ошибок.
-6. Тестирование
-- Протестируйте ваше приложение, выполняя запросы через Postman или другой инструмент для тестирования API.
-- Убедитесь, что все операции выполняются корректно и данные сохраняются/изменяются/удаляются в базе данных.
+### Instructions for completing the task:
+1. Creating a new Spring Boot project
+- Create a new Spring Boot project using Maven or Gradle.
+- Add the spring-boot-starter-web, spring-boot-starter-data-mongodb dependencies and other necessary libraries.
+2. Configure the connection to MongoDB
+- Run MongoDB in Docker using the command: ```docker run --name my-mongodb -d -p 27017:27017 mongo```
+- Configure the connection to your MongoDB database in the application.properties file.
+- Check that the settings are correct by running the application and making sure that it successfully connects to the database.
+3. Creating a data model
+- Define the User entity that will be stored in the MongoDB collection. This entity should contain the fields id, name, email, and age.
+- Use MongoDB annotations (@Document, @Id) to mark up the model correctly.
+4. Implementing the repository
+- Create an interface that extends MongoRepository<User, String> to implement standard CRUD operations.
+- Implement additional methods to search for users by name or age.
+5. Writing the controller
+- Write a REST controller that handles GET, POST, PUT, and DELETE requests for working with users.
+- Ensure input validation and error handling.
+6. Testing
+- Test your application by executing requests through Postman or another API testing tool.
+- Ensure that all operations are performed correctly and that data is saved/modified/deleted in the database.
 
-### Подсказки и советы:
-- При настройке подключения к MongoDB обратите внимание на формат URL соединения, он может выглядеть так: mongodb://localhost:27017/your_database_name.
-- Используйте аннотации @Document(collection = "users") для указания конкретной коллекции в базе данных.
-- Для валидации данных в контроллере применяйте аннотации из пакета javax.validation.constraints.
-- Если вы используете Gradle, добавьте зависимость на org.springframework.boot:spring-boot-starter-data-mongodb.
+### Tips and tricks:
+- When setting up your connection to MongoDB, pay attention to the connection URL format, which may look like this: mongodb://localhost:27017/your_database_name.
+- Use @Document(collection = “users”) annotations to specify a specific collection in the database.
+- To validate data in the controller, use annotations from the javax.validation.constraints package.
+- If you are using Gradle, add a dependency on org.springframework.boot:spring-boot-starter-data-mongodb.
