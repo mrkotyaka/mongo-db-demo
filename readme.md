@@ -1,4 +1,4 @@
-# Homework assignment for the class “Non-relational (NoSQL) databases”
+# Homework assignment for the class “Non-relational (NoSQL) databases” 
 
 ### With this assignment, you will:
 - Learn how to work with non-relational databases, use Spring Data to interact with NoSQL stores, and master the specifics of working with data in such systems.
